@@ -12,6 +12,7 @@ class Ship:
 
         # Movement flag
         self.moving_right = False
+        self.moving_left = False
 
         # Load the ship image and get its rect.
         self.image = pygame.image.load('images/ship.bmp')
@@ -29,3 +30,6 @@ class Ship:
 
         if self.moving_right:
             self.rect.x += 1
+
+        if self.moving_left:
+            self.rect.x -= 1
