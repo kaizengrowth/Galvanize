@@ -25,5 +25,3 @@ class AlienInvasion:
         # Make a game instance, and run the game.
         ai = AlienInvasion()
         ai.run_game()
-
-       
