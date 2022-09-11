@@ -33,3 +33,53 @@ These files are:
 * first_project/wsgi.py: This is a Python script that acts as the Web Server Gateway Interface. It helps us in deploying our web application to production.
 
 * db.sqlite3: This is a database file where all of the generated data will be stored.
+
+## Django Commands
+
+* Create a Django app in first_app directory
+'''
+python manage.py startapp first_app 
+'''
+
+* Run Django
+'''
+$ python manage.py runserver
+'''
+
+## Steps to Hello World
+1. Go to the settings.py file of our project and add the application to the list of installed applications under INSTALLED_APPS.
+
+2. Create first_app/viewspy file. 
+2.b Import HttpResponse object from django.http module
+    # from django.http import HttpResponse
+2.c Create a view function called index that takes request as a parameter, and returns a HttpRequest object, which takes a string parameter that represents the content of the page.
+    # def index(request):
+        # return HttpResponse("Hello World!")
+
+'''
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+
+def index(request):
+    return HttpResponse("Hello World!")
+```
+
+3. Map this view to a URL in first_app/urls.py
+3b. Import views from first_app.
+3c. Add the index pattern to urlpatterns list: 
+    # path('', views.index, name='index'),
+
+First parameter is the path of the URL. Second parameter is the name of a function to which we've mapped this URL. Third parameter is the name of this specific URL.
+
+```
+from django.contrib import admin
+from django.urls import path
+from first_app import views
+
+urlpatterns = [
+    path('',views.index,name="index"),
+    path('admin/', admin.site.urls),
+]
+```
