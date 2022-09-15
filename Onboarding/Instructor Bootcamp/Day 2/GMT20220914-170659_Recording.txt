@@ -1,0 +1,5 @@
+01:25:36	Kaitlin Cort:	Don't forget to record
+01:35:04	STAFF: Josh Elder:	which one?
+01:45:38	STAFF: Josh Elder:	is there a reason we just dont have students use the WSL2 filesystem?
+01:46:14	James Rogers (he/him/his):	i think the WSL2 FS just uses windows FS under the hood?
+02:23:27	STAFF: Josh Elder:	add me!
