@@ -1,0 +1,8 @@
+00:11:53	Curtis Schlak (he/him/his):	https://docs.djangoproject.com/en/4.1/ref/models/querysets/#update
+00:21:57	Curtis Schlak (he/him/his):	https://betterprogramming.pub/7-habits-of-highly-effective-programmers-699e6b47b76
+00:24:46	Curtis Schlak (he/him/his):	https://www.packtpub.com/product/hands-on-metaprogramming-with-python-3/9781838554651
+00:28:12	Curtis Schlak (he/him/his):	https://udidahan.com/
+00:31:22	Curtis Schlak (he/him/his):	https://www.humblebundle.com/books
+00:31:43	STAFF: Josh Elder:	I have gotten a couple of those book bundles
+00:32:39	Candice Haddad:	I'm good with plural sight
+00:42:33	STAFF: Josh Elder:	the knives out of software engineering
