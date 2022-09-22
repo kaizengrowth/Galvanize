@@ -90,16 +90,13 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">Kaitlin Cort</h4>
-          <p class="text-muted">This is a Django portfolio demo.</p>
+          <h4 class="text-white">Job Detail</h4>
+          <p class="text-muted">{{ job.summary }}</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
+            <li><a href="{% url 'home' %}" class="text-white">Back</a></li>
         </div>
       </div>
     </div>
@@ -122,13 +119,12 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Kaitlin Cort</h1>
-        <p class="lead text-muted">Something short about a Django lesson.</p>
+        <h1 class="fw-light">Job Detail</h1>
+        <p class="lead text-muted">{{ job.summary }}</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
         </p>
-        <img src="{% static 'KaitlinCort.jpeg' %}" height=300 alt="Kaitlin Cort"></img>
+        <img src="{{ job.image.url }}" height=300 alt="Kaitlin Cort"></img>
       </div>
     </div>
   </section>
@@ -142,7 +138,6 @@
 
         <div class="col">
           <div class="card shadow-sm">
-          <a href = '{% url 'detail' job.id %}'>
             <img class="card-img-top" src="{{ job.image.url }}">
             <div class="card-body">
               <p class="card-text">{{ job.summary }}</p>
@@ -151,7 +146,7 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-            </a>
+                <small class="text-muted">9 mins</small>
               </div>
             </div>
           </div>
