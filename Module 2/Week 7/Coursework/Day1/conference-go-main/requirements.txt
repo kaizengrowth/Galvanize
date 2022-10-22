@@ -1,7 +1,7 @@
 asgiref==3.5.0
 black==22.3.0
 click==8.1.2
-Django==4.0.3
+Django==4.0.8
 django-spa==0.3.6
 flake8==4.0.1
 mccabe==0.6.1
