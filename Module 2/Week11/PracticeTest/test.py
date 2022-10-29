@@ -1,45 +1,52 @@
-# def values_for_key(list_of_dicts, key):
-#     result = []
+# def filter_less_than_or_equal_to(values, threshold):
+#     ''' 
+#     Filter elements from values if it's less than or equal to threshold
     
-#     for l in list_of_dicts:
-#         if key in l.keys():
-#             result.append(l[key])
-#         else:
-#             result.append(None)
+#     Inputs: values (list), threshold (number, string)
+#     Outputs: list 
+#     '''
+
+#     output = []
+
+#     # 1. Loop through the list
+#     for v in values:
+#         # 2. For each element, test to see if element <= threshold
+#         if v <= threshold:
+#             # 3. If it is, then append to output
+#             output.append(v)
+
+#     print(output)
+#     return output
+
+# filter_less_than_or_equal_to(["a", "d", "z"], "c")
+
+
+def values_for_key(list_of_dicts, key):
+    # Return list of values for each key in each dictionary; If dictionary
+    # doesn't have key, return None. 
+    # Input: list_of_dicts(list of dictionaries), key(string)
+    # Output: list
     
-#     return result
+    output = []
+    
+    # 1. Loop through list of dictionaries with a for loop
+    for dict in list_of_dicts:
+        
+        # 2. For each dictionary, if it doesn't contain the key
+        if key not in dict:
+            
+            #3. Return none
+            output.append(None)
+            
+        # 4. Else, if the dictionary DOES have the key
+        else:
+            #5. Append the value to the output
+            output.append(dict[key])
+    
+    return output
 
-# # print(values_for_key([{"age": 10}, {"age": 12}], "age"))
-# print(values_for_key([{"age": 10}, {"remote": False}], "age"))
 
-def simple_sort(values):
-    # Set i = 1
-    i = 1
+list = [{"age": 10}, {"age": 12}]
+k = "age"
 
-    # While i is less than the length of 'values'
-    while i < len(values):
-
-        # Set j = i
-        j = i
-
-        # While j is greater than 0 and values[j - 1] > values[j]
-        while j > 0 and values[j-i] > values[j]:
-
-            # Set tmp = values[j]
-            tmp = values[j]
-
-            # Set values[j] = values[j - 1]
-            values[j] = values[j-1]
-
-            # Set values[j - 1] = tmp
-            values[j-1] = tmp
-
-            # Reduce j by 1
-            j -= 1
-
-        # Increase i by 1
-        i += 1
-
-    return values   
-
-print(simple_sort([5, 3, 1, 2, 4]))
+print(values_for_key(list, k))
