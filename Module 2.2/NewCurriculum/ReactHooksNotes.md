@@ -17,3 +17,5 @@ Additional hooks:
 8. useImperativeHandle
 9. useLayoutEffect
 10. useDebugValue
+
+React Hooks must be called in the same order in every component render.
