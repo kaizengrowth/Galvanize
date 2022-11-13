@@ -147,3 +147,11 @@ The return statement will act as "clean up". It will run before any other useEff
 ## useContext
 
 Provider passes down global state data to all child components.
+
+=========
+
+# Front End Masters
+
+## Brian Holt: Intro to React v7
+
+Idea for lecture: make sure to do a Select (relevant for their final project)
