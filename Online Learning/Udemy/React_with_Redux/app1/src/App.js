@@ -1,29 +1,16 @@
 import React, { useState } from 'react';
 
 function App() {
-  const [state, setState] = useState({count: 4, theme: 'blue'})
-
-  const count = state.count
-  const theme = state.theme
-
-  function decrementCount() {
-    setState(prevState => {
-      return { ...prevState, count: prevState.count - 1 }
-    }) 
-  }
-
-  function incrementCount() {
-    setState(prevState => {
-      return { ...prevState, count: prevState.count + 1 }
-    }) 
-  }
+  const [resourceType, setResourceType] = useState('posts')
 
   return (
     <>
-       <button onClick={decrementCount}>-</button>
-       <span>{count}</span>
-       <span>{theme}</span>
-       <button onClick={incrementCount}>+</button> 
+      <div>
+        <button onClick={() => setResourceType('posts')}>Posts</button>
+        <button onClick={() => setResourceType('users')}>Users</button>
+        <button onClick={() => setResourceType('comments')}>Comments</button>
+      </div>
+      <h1>{resourceType}</h1>
     </>
   );
 }
