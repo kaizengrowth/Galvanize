@@ -1,12 +1,12 @@
+import React from 'react';
+
 function App() {
-  let name = 'moe';
   return (
-    <div className="App">
-      
-       React
-       {name}
-    
-    </div>
+    <>
+       <button>-</button>
+       <span>0</span>
+       <button>+</button> 
+    </>
   );
 }
 
