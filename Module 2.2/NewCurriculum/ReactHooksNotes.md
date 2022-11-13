@@ -73,6 +73,32 @@ const Counter = () => {
 ```
 
 
+## Rules of Hooks
+1. Must be used inside of functional components
+2. Must not be inside a loop, condition, or nested function
+
+The order in which Hooks are executed has to be identical for each re-render of the component, which explains why it is not possible to call a Hook conditionally.
+
+You can use a condition inside a hook:
+```
+useEffect(() => {
+    if (title) {
+      document.title = title;
+    }
+  }, [title]);
+```
+
+## useRef
+References in function components also serve a different purpose: they allow us to create a mutable reference that will persist for the entire lifespan of the component (meaning until it unmounts).
+
+The useRef() Hook takes in an optional initial value and returns an object with a current property, which can then be accessed within the function component. This access is not limited to read access but also allows write access. If we wanted to provide data whose changes would not trigger a re-render but whose reference would stay the same between two rendering cycles, we can use the useRef() Hook.
+
+## useReducer
+The useReducer() Hook is an alternative solution for useState() and allows us to manage more complex states. It’s based on flux architecture in which a reducer function creates a new state by being passed the last state and an action.
+
+The reducer function is called by executing a dispatch function, that in turn receives an action.
+
+------
 # WebDevSimp
 
 ## useState
