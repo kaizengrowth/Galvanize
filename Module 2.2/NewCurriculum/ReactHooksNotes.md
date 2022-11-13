@@ -45,3 +45,17 @@ Instead, you should use multiple hooks for multiple pieces of your state.
 
 ## useEffect
 
+The second argument in useEffect specifies that changes in a certain variable will cause the effect to be triggered. 
+
+If the second argument is an empty array, that means useEffect will only be triggered on mount.
+
+To unmount the effect after being called, use a return statement:
+
+```
+useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+```
