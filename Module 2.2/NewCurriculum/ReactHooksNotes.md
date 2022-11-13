@@ -18,4 +18,20 @@ Additional hooks:
 9. useLayoutEffect
 10. useDebugValue
 
-React Hooks must be called in the same order in every component render.
+React Hooks must be called in the same order in every component render. Hooks can't be nested inside of if statements, functions, or wrapped inside anything.
+
+useState always gives us an array of two elements: i.e. state, setState.
+Destructure useState.
+Use function version of setting state if you're passing in value into the next useState function.
+
+If you call a function inside of useState, that function is only run the first time we run the component. However, if you pass in a function to useState, that function will be called every time state changes.
+
+setState doesn't merge new state with old state like in class component. Instead, it overwrites. So if you want to keep the old state, you have to merge it with a spread operator: 
+
+```
+function decrementCount() {
+    setState(prevState => {
+      return { ...prevState, count: prevState.count - 1 }
+    }) 
+  }
+```
