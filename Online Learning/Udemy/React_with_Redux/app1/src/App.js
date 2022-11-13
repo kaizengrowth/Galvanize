@@ -1,22 +1,32 @@
 import React, { useState, useEffect } from 'react';
 
 export default function App() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth)
-  }
+  const [resourceType, setResourceType] = useState('posts')
+  const [items, setItems] = useState([])
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+    .then(response => response.json())
+    .then(json => setItems(json))
+
+    console.log('resource changed')
+
+    return() => {
+      console.log('return from resource change')
     }
-  }, [])
+  }, [resourceType])
 
   return (
-    <div>
-      {windowWidth}
-    </div>
+    <>
+      <div>
+        <button onClick={() => setResourceType('posts')}>Posts</button>
+        <button onClick={() => setResourceType('users')}>Users</button>
+        <button onClick={() => setResourceType('comments')}>Comments</button>
+      </div>
+      <h1>{resourceType}</h1>
+      {items.map(item => {
+        return <pre>{JSON.stringify(item)}</pre>
+      })}
+    </>
   );
 }

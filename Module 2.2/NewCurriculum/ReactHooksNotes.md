@@ -18,6 +18,17 @@ Additional hooks:
 9. useLayoutEffect
 10. useDebugValue
 
+## useEffect
+The name of the useEffect() Hook derives from its intended usage: for side effects.
+
+This function, which we will call the effect function for now, is invoked after each rendering of the component. Since this effect function is called after each render of the component, it is also called after the first render. 
+
+The effect function can optionally return another function. Let’s call this function a Cleanup function. Our cleanup function is not only called during the unmounting of the component but also before each new execution of the effect function.
+
+The second parameter of the useEffect() Hook is the dependency array. The values of this array indicate the values upon which the execution of the effect function depends on. If a dependency array is passed, the Hook is only invoked initially, and then only when at least one of the values in the dependency array has changed.
+
+If we explicitly try to replicate behavior previously covered by componentDidMount(), we can pass an empty array as our second parameter. React then only executes the effect function on the initial render and only calls a cleanup function again during unmount.
+
 # WebDevSimp
 
 ## useState
@@ -59,3 +70,5 @@ useEffect(() => {
     }
   }, [])
 ```
+
+The return statement will act as "clean up". It will run before any other useEffect function is run. This will essentially clean up the last effect.
