@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default function App() {
+export default function uEffect() {
   const [resourceType, setResourceType] = useState('posts')
   const [items, setItems] = useState([])
 

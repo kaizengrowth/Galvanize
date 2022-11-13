@@ -116,3 +116,8 @@ useEffect(() => {
 ```
 
 The return statement will act as "clean up". It will run before any other useEffect function is run. This will essentially clean up the last effect.
+
+
+## useContext
+
+Provider passes down global state data to all child components.
