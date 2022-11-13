@@ -29,6 +29,50 @@ The second parameter of the useEffect() Hook is the dependency array. The values
 
 If we explicitly try to replicate behavior previously covered by componentDidMount(), we can pass an empty array as our second parameter. React then only executes the effect function on the initial render and only calls a cleanup function again during unmount.
 
+## useContext
+It allows us to consume data from a Context Provider without having to define a Provider component with a function as a child.
+
+The useContext() Hook is passed a Context object, which you can create by using React.createContext(). It will then return the value of the next higher-up provider in the component hierarchy.
+
+If the value in the Context is changed within the provider, the useContext() Hook will trigger a re-render with the updated data from the provider.
+
+### Consumer?
+
+The ContextExample component receives its data from the pseudo-account data provider: the AccountContext provider. This works without having to wrap an AccountContext.Consumer component around ContextExample. It saves us multiple lines of code in the component itself and leads to a much better debugging experience because the component tree is not as deeply nested as it would be otherwise.
+
+However, this simplification is entirely optional. If you prefer to keep using the well-known Consumer component to access data from a provider, that is completely acceptable.
+
+
+## example
+```
+const Counter = () => {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    // `document.title` is set with each change (didMount/didUpdate).
+    // Given the `value` has changed
+    document.title = `The button has been clicked ${value} times.`;
+
+    // Here we're returning our "Cleanup function" which resets the
+    // title to the default before each update
+    return () => {
+      document.title = defaultTitle;
+    };
+
+    // Lastly, our dependency array. This way the Effect function
+    // is only invoked when the `value` has actually changed.
+  }, [value]);
+
+  return (
+    <div>
+      <p>Counter: {value}</p>
+      <button onClick={() => setValue(value + 1)}>+1</button>
+    </div>
+  );
+};
+```
+
+
 # WebDevSimp
 
 ## useState
