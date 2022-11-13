@@ -1,32 +1,23 @@
 import React, { useState } from 'react';
+import FunctionContextComponent from './FunctionContextComponent'
+import ClassContextComponent from './ClassContextComponent'
 
-export default function App() {
-  const [resourceType, setResourceType] = useState('posts')
-  const [items, setItems] = useState([])
+export const ThemeContext = React.createContext()
 
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
-    .then(response => response.json())
-    .then(json => setItems(json))
+export default function App() { 
+  const [darkTheme, setDarkTheme] = useState(true)
 
-    console.log('resource changed')
-
-    return() => {
-      console.log('return from resource change')
-    }
-  }, [resourceType])
+  function toggleTheme() {
+    setDarkTheme(prevDarkTheme => ! prevDarkTheme)
+  }
 
   return (
     <>
-      <div>
-        <button onClick={() => setResourceType('posts')}>Posts</button>
-        <button onClick={() => setResourceType('users')}>Users</button>
-        <button onClick={() => setResourceType('comments')}>Comments</button>
-      </div>
-      <h1>{resourceType}</h1>
-      {items.map(item => {
-        return <pre>{JSON.stringify(item)}</pre>
-      })}
+      <ThemeContext.Provider value={darkTheme}>
+        <button onClick={toggleTheme}>Toggle Theme</button>
+        <FunctionContextComponent />
+        <ClassContextComponent />
+      </ThemeContext.Provider>
     </>
   );
 }
