@@ -11,7 +11,7 @@ export default function Nav() {
 
             {/* { numbers.map(number => <MenuItem number={number} />) } */}
 
-            { links.map(link => <MenuItem link={link} />) }
+            { links.map((link, key) => <MenuItem link={link} key={key} />) }
         </div>
     )
 }
