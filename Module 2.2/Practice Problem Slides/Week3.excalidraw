@@ -439,8 +439,8 @@
     },
     {
       "type": "text",
-      "version": 833,
-      "versionNonce": 1677727586,
+      "version": 834,
+      "versionNonce": 1092112034,
       "isDeleted": false,
       "id": "ptkvdRcnmsB1LAPSRFdbR",
       "fillStyle": "hachure",
@@ -450,7 +450,7 @@
       "opacity": 100,
       "angle": 0,
       "x": 687.8262495175079,
-      "y": 310.4405964390488,
+      "y": 310.54068997059704,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 75,
@@ -464,7 +464,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1669102612469,
+      "updated": 1669102902466,
       "link": null,
       "locked": false,
       "fontSize": 20,
