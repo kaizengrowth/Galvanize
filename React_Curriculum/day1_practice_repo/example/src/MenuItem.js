@@ -1,9 +1,11 @@
+import './App.css'
+
 const MenuItem = (props) => {
-    const num = props.number
+    const link = props.link
     return (
-        <>
-            <p>Item {num}</p>
-        </>
+        <div className="Link">
+            <p>{link}</p>
+        </div>
     );
 }
 
